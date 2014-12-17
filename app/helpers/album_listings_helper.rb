@@ -1,0 +1,2 @@
+module AlbumListingsHelper
+end

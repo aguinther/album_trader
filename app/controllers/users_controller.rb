@@ -3,6 +3,20 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    @user.update(user_params)
+
+    if @user.save!
+      redirect_to root_path,
+        notice: 'Profile has been successfully updated.'
+    end
+  end
+
   def create
     @user = User.new(user_params)
 

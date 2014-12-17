@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'album_listings/mine' => 'album_listings#my_listings'
+  resources :album_listings
+
+  resources :albums
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -16,7 +21,7 @@ Rails.application.routes.draw do
     to: 'sessions#destroy'
 
   resources :users,
-    only: [:new, :create],
+    only: [:new, :create, :edit, :update],
     path_names: { new: 'Signup' }
 
   # Example resource route with options:
