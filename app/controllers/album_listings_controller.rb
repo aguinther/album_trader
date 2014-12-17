@@ -29,6 +29,7 @@ class AlbumListingsController < ApplicationController
   # POST /album_listings.json
   def create
     @album_listing = AlbumListing.new(album_listing_params)
+    @album_listing.seller_id = current_user.id
 
     respond_to do |format|
       if @album_listing.save
