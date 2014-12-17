@@ -7,7 +7,6 @@ gem 'factory_girl_rails'
 gem 'faker'
 gem 'bcrypt'
 gem 'bootstrap-generators'
-gem 'cancan'
 gem 'paperclip'
 
 group :test do
