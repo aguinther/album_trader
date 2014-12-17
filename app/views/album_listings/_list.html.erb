@@ -30,7 +30,7 @@
         <td><%= link_to 'Show', album_listing %></td>
         <td><%= link_to 'Edit', edit_album_listing_path(album_listing) %></td>
         <td><%= link_to 'Destroy', album_listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% elsif current_user %>
+      <% elsif current_user && current_user.id != album_listing.seller_id && album_listing.buyer_id == nil %>
         <td><%= link_to 'Purchase', album_listing, method: :purchase, data: { confirm: 'Are you sure you would like to purchase this album?' }%></td>
         <% end %>
     <% end %>

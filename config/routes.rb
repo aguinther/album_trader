@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'album_listings/mine' => 'album_listings#my_listings'
+  get 'album_listings/my_inventory' => 'album_listings#my_listings'
+  get 'album_listings/my_purchases' => 'album_listings#my_purchases'
   resources :album_listings
-
-  resources :albums
+  post 'album_listings/:id' => 'album_listings#purchase'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

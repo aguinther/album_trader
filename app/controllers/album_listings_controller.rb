@@ -1,14 +1,27 @@
 class AlbumListingsController < ApplicationController
-  before_action :set_album_listing, only: [:show, :edit, :update, :destroy]
+  before_action :set_album_listing, only: [:show, :edit, :update, :destroy, :purchase]
 
   # GET /album_listings
   # GET /album_listings.json
   def index
-    @album_listings = AlbumListing.all
+    @album_listings = AlbumListing.where(buyer_id: nil)
   end
 
   def my_listings
     @album_listings = AlbumListing.where(seller_id: current_user.id)
+  end
+
+  def my_purchases
+    @album_listings = AlbumListing.where(buyer_id: current_user.id)
+  end
+
+  def purchase
+    @album_listing.buyer_id = current_user.id
+    @album_listing.save!
+    respond_to do |format|
+      format.html { redirect_to album_listings_url, notice: 'Album was successfully purchased' }
+      format.json { head :no_content }
+    end
   end
 
   # GET /album_listings/1

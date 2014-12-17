@@ -30,6 +30,9 @@
         <%= link_to "Albums On The Web", "/", :class => "navbar-brand" %>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
+        <ul style="float: left;" class="nav navbar-nav">
+          <li><%= link_to "All Listings", album_listings_path %></li>
+        </ul>
         <ul class="nav navbar-nav">
           <%= render 'layouts/authentication' %>
         </ul>
