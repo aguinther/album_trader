@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20141217035937) do
     t.integer  "release_year"
     t.float    "price"
     t.string   "condition"
-    t.string   "type"
+    t.string   "medium"
     t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"

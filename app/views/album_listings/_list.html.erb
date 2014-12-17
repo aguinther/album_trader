@@ -19,12 +19,20 @@
     <tbody>
     <%= content_tag_for(:tr, @album_listings) do |album_listing| %>
       <td width="200px"><%= image_tag album_listing.picture.url(:medium), width: '200', height: '200' %></td>
+      <td><%= album_listing.title %></td>
+      <td><%= album_listing.artist %></td>
       <td><%= album_listing.price %></td>
       <td><%= album_listing.quantity %></td>
       <td><%= album_listing.condition %></td>
-      <td><%= link_to 'Show', album_listing %></td>
-      <td><%= link_to 'Edit', edit_album_listing_path(album_listing) %></td>
-      <td><%= link_to 'Destroy', album_listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= album_listing.medium %></td>
+      <td><%= album_listing.release_year %></td>
+      <% if current_user && (current_user.admin? || album_listing.seller_id == current_user.id) %>
+        <td><%= link_to 'Show', album_listing %></td>
+        <td><%= link_to 'Edit', edit_album_listing_path(album_listing) %></td>
+        <td><%= link_to 'Destroy', album_listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% elsif current_user %>
+        <td><%= link_to 'Purchase', album_listing, method: :purchase, data: { confirm: 'Are you sure you would like to purchase this album?' }%></td>
+        <% end %>
     <% end %>
     </tbody>
   </table>

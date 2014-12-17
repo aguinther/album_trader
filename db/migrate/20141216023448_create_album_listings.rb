@@ -6,7 +6,7 @@ class CreateAlbumListings < ActiveRecord::Migration
       t.integer :release_year
       t.float :price
       t.string :condition
-      t.string :type
+      t.string :medium
       t.integer :quantity
 
       t.timestamps
