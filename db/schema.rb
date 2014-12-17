@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20141217035937) do
     t.float    "price"
     t.string   "condition"
     t.string   "medium"
-    t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "buyer_id"

@@ -5,6 +5,6 @@ class AlbumListing < ActiveRecord::Base
   belongs_to :seller, :class_name => 'User', :foreign_key => 'id'
 
   validates_presence_of :title, :artist, :price, :condition, :medium
-  validates :price, :quantity, :numericality => { greater_than: 0 }
+  validates :price, :numericality => { greater_than: 0 }
   validates :release_year, :numericality => { greater_than_or_equal_to: 1857}
 end

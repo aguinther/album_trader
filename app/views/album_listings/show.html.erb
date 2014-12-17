@@ -11,13 +11,21 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dd style="padding-bottom: 30px;"><%= image_tag @album_listing.picture.url, width: '300', height: '300' %></dd>
+  <dd/>
+  <dt>Title:</dt>
+  <dd><%= @album_listing.title %></dd>
+  <dt>Artist:</dt>
+  <dd><%= @album_listing.artist %></dd>
   <dt>Price:</dt>
   <dd><%= @album_listing.price %></dd>
-
-  <dt>Quantity:</dt>
-  <dd><%= @album_listing.quantity %></dd>
-
   <dt>Condition:</dt>
   <dd><%= @album_listing.condition %></dd>
+  <dt>Medium:</dt>
+  <dd><%= @album_listing.medium %></dd>
+  <dt>Release Year:</dt>
+  <dd><%= @album_listing.release_year %></dd>
+  <dt>Seller:</dt>
+  <dd><%= "#{@album_listing.seller.first_name} #{@album_listing.seller.last_name}" %></dd>
 
 </dl>

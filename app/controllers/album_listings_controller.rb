@@ -9,6 +9,7 @@ class AlbumListingsController < ApplicationController
 
   def my_listings
     @album_listings = AlbumListing.where(seller_id: current_user.id)
+    @album_listings = @album_listings.sort_by {|obj| [obj.buyer_id ? 0 : 1,obj.buyer_id || 0]}
   end
 
   def my_purchases
@@ -45,7 +46,7 @@ class AlbumListingsController < ApplicationController
     @album_listing.seller_id = current_user.id
 
     respond_to do |format|
-      if @album_listing.save
+      if @album_listing.save!
         format.html { redirect_to @album_listing, notice: 'Album listing was successfully created.' }
         format.json { render :show, status: :created, location: @album_listing }
       else
@@ -88,7 +89,7 @@ class AlbumListingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_listing_params
       params.require(:album_listing).permit(:title, :artist, :price,
-         :quantity, :condition, :picture, :medium, :release_year)
+        :condition, :picture, :medium, :release_year)
     end
 
 end
