@@ -135,15 +135,15 @@ $table-cell-padding:            8px !default;
 $table-condensed-cell-padding:  5px !default;
 
 //** Default background color used for all tables.
-$table-bg:                      transparent !default;
+$table-bg:                      darken(rgba(255, 239, 213, 0.85), 8%) !default;
 //** Background color used for `.table-striped`.
-$table-bg-accent:               #f9f9f9 !default;
+$table-bg-accent:               transparent !default;
 //** Background color used for `.table-hover`.
-$table-bg-hover:                #f5f5f5 !default;
+$table-bg-hover:                rgba(255, 239, 213, 0.85) !default;
 $table-bg-active:               $table-bg-hover !default;
 
 //** Border color for table and cell borders.
-$table-border-color:            #ddd !default;
+$table-border-color:            #7F462C !default;
 
 
 //== Buttons
@@ -157,8 +157,8 @@ $btn-default-bg:                 #fff !default;
 $btn-default-border:             #ccc !default;
 
 $btn-primary-color:              #fff !default;
-$btn-primary-bg:                 $brand-primary !default;
-$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+$btn-primary-bg:                 #7F462C !default;
+$btn-primary-border:             darken(#7F462C, 5%) !default;
 
 $btn-success-color:              #fff !default;
 $btn-success-bg:                 $brand-success !default;
@@ -857,7 +857,7 @@ $blockquote-font-size:        ($font-size-base * 1.25) !default;
 //** Blockquote border color
 $blockquote-border-color:     $gray-lighter !default;
 //** Page header border color
-$page-header-border-color:    $gray-lighter !default;
+$page-header-border-color:    #7F462C !default;
 //** Width of horizontal description list titles
 $dl-horizontal-offset:        $component-offset-horizontal !default;
 //** Horizontal line color.
