@@ -13,8 +13,5 @@ User.create(first_name: 'Jason', last_name: 'Noble', email: 'jason@email.com',
 AlbumListing.create(title: 'Moving Pictures', artist: 'Rush', release_year: 1981,
   price: 5.99, medium: 'Album', condition: 'Mint', seller: user, seller_id: user.id)
 
-AlbumListing.create(title: 'Moving Pictures', artist: 'Rush', release_year: 1981,
-  price: 5.99, medium: 'Album', condition: 'Good', seller: user, seller_id: user.id)
-
 AlbumListing.create(title: 'Hemispheres', artist: 'Rush', release_year: 1978,
   price: 11.99, medium: 'Album', condition: 'Good', seller: user, seller_id: user.id)
