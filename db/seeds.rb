@@ -10,6 +10,7 @@ user = User.create(first_name: 'Andy', last_name: 'Guinther', email: 'andy@email
 User.create(first_name: 'Jason', last_name: 'Noble', email: 'jason@email.com',
   password: 'pass',:password_confirmation => 'pass', admin: false)
 
+# user.sales.create(title: 'Moving Pictures', artist: 'Rush', release_year: 1981, price: 5.99, medium: 'Album', condition: 'Mint')
 AlbumListing.create(title: 'Moving Pictures', artist: 'Rush', release_year: 1981,
   price: 5.99, medium: 'Album', condition: 'Mint', seller: user, seller_id: user.id)
 
