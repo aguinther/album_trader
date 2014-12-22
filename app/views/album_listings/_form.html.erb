@@ -1,3 +1,4 @@
+<div style="background-color: rgba(255,223,172,0.85)">
 <%= form_for(@album_listing, :html => { :class => "form-horizontal", :role => "form" }) do |f| %>
   <% if @album_listing.errors.any? %>
     <div class="alert alert-danger alert-dismissable" role="alert">
@@ -60,3 +61,4 @@
     </div>
   </div>
 <% end %>
+</div>
