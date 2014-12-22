@@ -10,7 +10,7 @@
   <h1>Show <%= singular_table_name %></h1>
 </div>
 
-<dl class="dl-horizontal">
+<dl style="background-color: rgba(255,223,172,0.85)" class="dl-horizontal">
   <%- attributes.each do |attribute| -%>
   <dt><%= attribute.human_name %>:</dt>
   <dd><%%= @<%= singular_table_name %>.<%= attribute.name %> %></dd>
